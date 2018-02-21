@@ -5,6 +5,7 @@
  */
 package edu.eci.pdsw.samples.tests;
 
+import edu.eci.pdsw.samples.entities.Cliente;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosAlquiler;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,7 +15,7 @@ import static org.junit.Assert.*;
  *
  * 
  */
-public class ClientesTest {
+public abstract class ClientesTest {
 
     public ClientesTest() {
     }
