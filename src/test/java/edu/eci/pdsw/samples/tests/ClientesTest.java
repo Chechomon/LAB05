@@ -7,6 +7,8 @@ package edu.eci.pdsw.samples.tests;
 
 import edu.eci.pdsw.samples.entities.Cliente;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosAlquiler;
+import edu.eci.pdsw.samples.services.ServiciosAlquiler;
+import edu.eci.pdsw.samples.services.ServiciosAlquilerItemsStub;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -27,7 +29,14 @@ public abstract class ClientesTest {
   
     @Test
     public void additems1() throws ExcepcionServiciosAlquiler{
-    	
+    	ServiciosAlquiler sa=ServiciosAlquilerItemsStub.getInstance();
+        sa.registrarCliente(new Cliente("Juan Perez",3842,"24234","calle 123","aa@gmail.com"));
+        try {
+            sa.registrarCliente(new Cliente("Juan Perez",3842,"24234","calle 123","aa@gmail.com"));
+        } catch (ExcepcionServiciosAlquiler e){
+            assertTrue("no deberia registrar dos veces",true);
+        }
+            fail();
     }
      /**
      * @obj registrar un cliente en el sistema
