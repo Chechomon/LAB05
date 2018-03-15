@@ -81,10 +81,8 @@
                                 <destFileName>webapp-runner.jar</destFileName>
                             </artifactItem>
                         </artifactItems>
-
                     </configuration>
                 </execution>
-
             </executions>
         </plugin>
         <plugin>
